@@ -1,0 +1,150 @@
+﻿body {
+}
+.Main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
+}
+
+.container1 {
+    background-color: black;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container2 {
+    height: fit-content;
+    background-color: wheat;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container3 {
+    margin-left: 30px;
+    height: 200px;
+    width: 200px;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: auto;
+    grid-row-end: auto;
+}
+
+.container4 {
+    padding: 20px;
+    background-color: black;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: auto;
+    height: 400px;
+    color: white;
+}
+
+.element {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px 150px;
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+    padding: 1%;
+    width: 270px;
+    height: fit-content;
+    margin: 10px;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+}
+
+.TextElement {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.ButtonElement {
+    padding-top: 70px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.img2 {
+    width: 100%;
+    height: 200px;
+}
+
+.ImageElement {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+}
+
+.btn {
+    width: 99%;
+    height: 50%;
+}
+
+.txt {
+    padding-top: 50px;
+    vertical-align: central;
+    width: 100%;
+    height: 50%
+}
+
+.header__title {
+    color: white;
+    margin-left: 200px;
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+}
+
+.header-button {
+    padding: 10px 30px;
+    background-color: rgb(27, 26, 26);
+    border-radius: 10px;
+    font-size: 13pt;
+    margin: 0 10px;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+}
+
+    .header-button:hover {
+        background-color: white;
+        color: black;
+    }
+
+.header__buttons {
+    display: flex;
+    padding-top: 30px;
+}
+
+.title {
+    color: black;
+    text-align: center;
+    font-family: 'Comic Sans MS'
+}
+
+.lox {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.take {
+    margin-top: 30px;
+    color: black;
+    border-color: black;
+}
+
