@@ -29,11 +29,12 @@
             <div class="container2">
                 <label class="count_product">@Products.Count товаров</label>
             </div>
-        </div>
+        
 
+
+            <div class="container3">
             @foreach (Product item in Products)
             {
-            <div class="container3">
                 <div class="card">
                     <a href="https://localhost:7038/Home/MainPage/Item?id=@item.product_article">
                         <div class="card-image">
@@ -48,8 +49,9 @@
                         <a class="btn btn-purple" href="">Go to Science</a>
                     </div>
                 </div>
-            </div>    
             }
+            </div>
+        </div>
 
         </div>
             
