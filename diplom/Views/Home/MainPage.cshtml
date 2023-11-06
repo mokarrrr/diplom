@@ -2,6 +2,10 @@
 @{
     ViewData["Title"] = "MainPage";
 }
+@{
+     List<Product> Products = MainContext.Instantce.Product.ToList();
+}
+
 <link rel="stylesheet" href="~/css/mainwindow.css" />
 <body>
     <div class="Main">
@@ -16,22 +20,38 @@
         </header>
 
         <div class="main_body">
-            @*<div class="search_bar">
-            <input type="search" placeholder="Искать в магазине" class="search-bar">
-                <div class="container1">
+            <div class="container1">
                 <div class="search_bar">
-                    <input type="search" placeholder="Искать в магазине" class="search-bar">
-                </div>
+                 <input type="search" placeholder="Искать в магазине" class="search-bar">
+                 </div>
                 <p class="title">каталог</p>
             </div>
             <div class="container2">
-                <label class="count_product">0 товаров</label>
+                <label class="count_product">@Products.Count товаров</label>
             </div>
-            <div class="container3">
-
-            </div>
-        </div>*@
-            
         </div>
+
+            @foreach (Product item in Products)
+            {
+            <div class="container3">
+                <div class="card">
+                    <a href="https://localhost:7038/Home/MainPage/Item?id=@item.product_article">
+                        <div class="card-image">
+
+                            <img class="img" src="@item.product_img" />
+                        </div>
+                    </a>
+
+                    <div class="card-body">
+                        <h2 class="card-title">@item.Name_product</h2>
+                        <p>@item.product_description_</p>
+                        <a class="btn btn-purple" href="">Go to Science</a>
+                    </div>
+                </div>
+            </div>    
+            }
+
+        </div>
+            
 </body>
 
