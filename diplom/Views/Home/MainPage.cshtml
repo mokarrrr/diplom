@@ -20,40 +20,41 @@
         </header>
 
         <div class="main_body">
-            <div class="container1">
+            <div class="container1" >
                 <div class="search_bar">
-                 <input type="search" placeholder="Искать в магазине" class="search-bar">
-                 </div>
-                <p class="title">каталог</p>
+                    <input type="search" placeholder="Искать в магазине" class="search-bar">
+                </div>               
             </div>
             <div class="container2">
+                <select name="filter" id="filter">
+                    <option value="by_popularity">По популярности</option>
+                    <option value="by_alphabet">По алфавиту</option>
+                    <option value="cheaper">Дешевле</option>
+                    <option value="expensive">Дороже</option>
+                </select>
                 <label class="count_product">@Products.Count товаров</label>
             </div>
-        
-
 
             <div class="container3">
-            @foreach (Product item in Products)
-            {
-                <div class="card">
-                    <a href="https://localhost:7038/Home/MainPage/Item?id=@item.product_article">
-                        <div class="card-image">
+        @foreach (Product item in Products)
+        {
+            <div class="card">
+                <a href="https://localhost:7038/Home/MainPage/Item?id=@item.product_article">
+                    <div class="card-image">
 
-                            <img class="img" src="@item.product_img" />
-                        </div>
-                    </a>
-
-                    <div class="card-body">
-                        <h2 class="card-title">@item.Name_product</h2>
-                        <p>@item.product_description_</p>
-                        <a class="btn btn-purple" href="">Go to Science</a>
+                        <img class="img" src="@item.product_img" />
                     </div>
-                </div>
-            }
-            </div>
-        </div>
+                </a>
 
+                <div class="card-body">
+                    <h2 class="card-title">@item.Name_product</h2>
+                    <p>@item.product_description_</p>
+                    <a class="btn btn-purple" href="">Go to Science</a>
+                </div>
+            </div>
+        }
+        </div>        
         </div>
-            
+    </div>
 </body>
 
