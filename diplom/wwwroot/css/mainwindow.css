@@ -20,13 +20,13 @@ header {
 .logo {
     grid-column: 1;
     display: flex;
-margin-left:50px;
+    vertical-align:middle;
 }
 .company-name {
-    margin-top:40px;
+    margin:auto auto 105px auto;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Comic Sans MS';
+    font-family: 'Lobster', sans-serif;
     color: black;
     font-size:25px;
 }
@@ -44,7 +44,6 @@ margin-left:50px;
     background-position: 8px;
     outline:none;
     padding-left: 60px;
-    margin-top: 20px;
     align-items: center;
     height: 48px;
     width: 320px;
@@ -69,7 +68,8 @@ margin-left:50px;
     width: 98%;
 }
 .container1 {
-    position:fixed;
+    top:120px;
+    position:sticky;
     display:grid;
     align-items: center;
     margin-left: 30px;
@@ -90,13 +90,13 @@ margin-left:50px;
     background-color: white;
 }
 .count_product {
+    margin-top:60px;
+    margin-right:auto;
+    margin-left:100px;
     font-family: 'Comic Sans MS';
-    margin-bottom:70px;
-    margin-left:20px;
     display: flex;
-    align-items: center;
     grid-column: 1;
-    text-align: left;
+    text-align: center;
     color: black;
     grid-row: 1;
 }
@@ -115,14 +115,16 @@ margin-left:50px;
 }
 
 select {
-    height:fit-content;
-    grid-column:3;
-    text-align:left;
+    margin-top: 60px;
+    margin-left:299px;
+    height: fit-content;
+    grid-column: 3;
+    text-align: left;
     display: flex;
-    border-color:black;
+    border-color: black;
     padding: 10px 5px;
     border-radius: 10px;
-    width:fit-content;
+    width: fit-content;
 }
 
     select:focus {
