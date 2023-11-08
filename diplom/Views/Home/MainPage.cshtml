@@ -57,7 +57,7 @@
                                 <div class="col-sm-4">
                                     <div class="product-card">
                                         <div class="card-thumbnail">
-                                <img class="img-responsive" src="https://static.tildacdn.com/tild3563-3738-4635-b035-366365316237/photo.jpg" style="height:300px;width:400px">
+                                <img class="img-responsive" src="@item.product_img" style="height:300px;width:400px">
                                         </div>
                                         <div class="card-content">
                                             <div class="send">
@@ -75,11 +75,11 @@
                                 <p>Цена: @item.product_price руб. за @item.product_weight грамм</p>
                                             <ul class="list-inline post-meta">
                                                 <li class="time-stamp">
-                                                    <i class="fa fa-clock-o"></i> 6 mins ago
+                                        <i class="fa fa-clock-o"></i> Массовая доля жира: @item.product_mass_per_fat%
                                                 </li>
-                                                <li class="card-comment">
-                                                    <i class="fa fa-comments"></i><a href="#"> 39 comments</a>
-                                                </li>
+                                    <li class="time-stamp">
+                                        <i class="fa fa-clock-o"></i> Жирность: @item.product_fatty%
+                                    </li>
                                             </ul>
                                         </div>
                                     </div>

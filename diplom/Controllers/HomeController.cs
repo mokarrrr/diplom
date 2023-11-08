@@ -3,8 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Diagnostics;
 using System.Linq;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Threading.Tasks;
 
 namespace diplom.Controllers
@@ -27,6 +31,8 @@ namespace diplom.Controllers
         {
             return View();
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

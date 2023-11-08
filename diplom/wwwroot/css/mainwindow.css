@@ -157,12 +157,6 @@ select {
     width: 100%;
     border-radius: 10px;
 }*/
-
-
-
-
-
-
 a,
 a:hover,
 a:active {
@@ -221,7 +215,7 @@ a:active {
     bottom: 0;
     background: #FFFFFF;
     width: 100%;
-    padding: 40px 30px;
+    padding: 15px 30px;
     -webkti-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -259,16 +253,24 @@ a:active {
     font-size: 12px;
     line-height: 1.8em;
     display: none;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    font-family:'Times New Roman';
+    margin-top:-10px;
     /* height: 0px; */
 }
 
 .product-card .card-content .post-meta {
-    margin: 30px 0 0;
+    margin: 20px 0 0;
     color: #999999;
+    margin-left:-20px;
 }
 
     .product-card .card-content .post-meta .time-stamp {
-        margin: 0 80px 0 0;
+        margin: 10px 70px 0 0;
+        font-size:13pt;
+        color:gray;
     }
 
     .product-card .card-content .post-meta a {
