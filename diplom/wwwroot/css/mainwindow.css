@@ -268,7 +268,7 @@ a:active {
 }
 
     .product-card .card-content .post-meta .time-stamp {
-        margin: 10px 70px 0 0;
+        margin: 10px 60px 0 0;
         font-size:13pt;
         color:gray;
     }
@@ -277,3 +277,25 @@ a:active {
         color: inherit;
         text-decoration: none;
     }
+.product-card .card-content .send {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+    background: #197;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s ease;
+    transition-delay: 0s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.basket{
+    height:47px;
+    margin-left:6px;
+    margin-top:5px;
+}
+.price{
+    font-size:15pt;
+}
