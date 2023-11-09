@@ -24,7 +24,7 @@ namespace diplom.Controllers
 
         public IActionResult HomePage()
         {
-           return View("HomePage", "~/css/site.css"); ;
+           return View("HomePage", "~/css/site.css"); 
         }
 
         public IActionResult MainPage()
