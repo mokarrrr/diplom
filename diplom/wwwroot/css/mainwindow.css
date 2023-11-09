@@ -290,7 +290,7 @@ a:active {
     transition-delay: 0s;
     transition-delay: 0.3s;
     opacity: 0;
-    background: linear-gradient(to bottom right,#ffcc01,#fdc401);
+    background: linear-gradient(to bottom right,#ffcc01,#e27105);
 }
 .basket{
     height:47px;
