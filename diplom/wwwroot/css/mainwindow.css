@@ -14,7 +14,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1,1fr);
-    background: linear-gradient(to bottom right, #ffcc01, #f3a700,#e07700);
+    background: linear-gradient(to bottom right,#ffcc01,#fdc401,#ffcc01);
     ;
     width: 100%;
     height: 120px;
