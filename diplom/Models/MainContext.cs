@@ -34,7 +34,9 @@ using Microsoft.EntityFrameworkCore;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-SD2NSU5\MSSQLSERVER05;User ID=sa;Password=12345;database=DiplomBD;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer(@"Data Source=192.168.221.12;User ID=user07;Password=07;database=beeee;TrustServerCertificate=True");
+
+        //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-SD2NSU5\MSSQLSERVER05;User ID=sa;Password=12345;database=DiplomBD;TrustServerCertificate=True");
     }
     public MainContext()
     {

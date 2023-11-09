@@ -111,7 +111,7 @@ header {
     grid-row-start: 2;
     grid-row-end: auto;
     background-color: white !important;
-    gap:100px;
+    gap:80px;
 }
 
 select {
