@@ -90,7 +90,7 @@ header {
     background-color: white;
 }
 .count_product {
-    margin-top:60px;
+    margin-top:63px;
     margin-right:auto;
     margin-left:85px;
     font-family: 'Comic Sans MS';
@@ -115,7 +115,7 @@ header {
 }
 
 select {
-    margin-top: 55px;
+    margin-top: 57px;
     margin-left:310px;
     height: fit-content;
     grid-column: 3;
