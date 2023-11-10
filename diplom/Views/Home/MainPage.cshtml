@@ -2,8 +2,14 @@
 @{
     ViewData["Title"] = "MainPage";
 }
+@model IEnumerable<diplom.Models.Product>
 @{
-     List<Product> Products = MainContext.Instantce.Product.ToList();
+    List<Product> Products;
+    Products = null;
+    if (Products == null)
+    {
+        Products = MainContext.Instantce.Product.ToList();
+    }
 
 }
 
@@ -24,9 +30,12 @@
         </div>
         <div class="main_body">
             <div class="container1" >
-                <div class="search_bar">
-                    <input type="search" placeholder="Искать в магазине" class="search-bar">
-                </div>               
+                @using (Html.BeginForm("MainPage","Home", FormMethod.Get))
+                {
+               <div class="search_bar">
+                    <input id="searching" type="search" placeholder="Искать в магазине" class="search-bar">
+                </div>     
+                }
             </div>
             <div class="container2">
                 <select name="filter" id="filter">

@@ -15,8 +15,8 @@ namespace diplom.Controllers
 {
     public class HomeController : Controller
     {
+        private MainContext db = new MainContext();
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -32,7 +32,12 @@ namespace diplom.Controllers
             return View();
         }
 
-     
+        public ViewResult HomePage(string searching)
+        {
+            List<Product> Products;
+            Products = null;
+            return View(Products=db.Product.Where(x=>x.Name_product.Contains(searching) || searching == null).ToList());
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
