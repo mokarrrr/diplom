@@ -3,15 +3,6 @@
     ViewData["Title"] = "MainPage";
 }
 @model IEnumerable<diplom.Models.Product>
-@{
-    List<Product> Products;
-    Products = null;
-    if (Products == null)
-    {
-        Products = MainContext.Instantce.Product.ToList();
-    }
-
-}
 
 <link rel="stylesheet" href="~/css/mainwindow.css" />
 <body>
@@ -30,12 +21,10 @@
         </div>
         <div class="main_body">
             <div class="container1" >
-                @using (Html.BeginForm("MainPage","Home", FormMethod.Get))
-                {
-               <div class="search_bar">
-                    <input id="searching" type="search" placeholder="Искать в магазине" class="search-bar">
-                </div>     
-                }
+                 <div class="search_bar">
+                        <input type="text" name="searchQuery" placeholder="Искать в магазине" class="search-bar" />
+                        <input type="submit" value="Search" />                              
+                </div>      
             </div>
             <div class="container2">
                 <select name="filter" id="filter">
@@ -44,62 +33,47 @@
                     <option value="cheaper">Дешевле</option>
                     <option value="expensive">Дороже</option>
                 </select>
-                <label class="count_product">@Products.Count товаров</label>
+                <label class="count_product"> товаров</label>
             </div>
 
-            <div class="container3">
-        @foreach (Product item in Products)
-        {
-@*             <div class="card">
-                <a href="https://localhost:7038/Home/MainPage/Item?id=@item.product_article">
-                    <div class="card-image">
-                        <img class="img" src="@item.product_img" />
-                    </div>
-                </a>
-
-                <div class="card-body">
-                    <h2 class="card-title">@item.Name_product</h2>
-                    <p>@item.product_description_</p>
-                    <a class="btn btn-purple" href="">Go to Science</a>
-                </div>
-            </div> *@
-
-                        
-                            
-                                <div class="col-sm-4">
-                                    <div class="product-card">
-                                        <div class="card-thumbnail">
-                                <img class="img-responsive" src="@item.product_img" style="height:300px;width:400px">
-                                        </div>
-                                        <div class="card-content">
-                                            <div class="send">
-                                                <img class="basket" src="/img/basket.png"/>
-                                                <i class="fa fa-send fa-2x"></i>
-                                            </div>
-                                            <h1 class="card-title">
-                                                @item.Name_product
-                                            </h1>
-                                            <h2 class="card-sub-title">
-                                                Vijaya Comnet Private
-                                            </h2>
-                                            <p class="description">
-                                                @item.product_description_
-                                            </p>
-                                                <p class="price">Цена: @item.product_price руб. за @item.product_weight грамм</p>
-                                            <ul class="list-inline post-meta">
-                                                <li class="time-stamp">
-                                        <i class="fa fa-clock-o"></i> Массовая доля жира: @item.product_mass_per_fat%
-                                                </li>
-                                    <li class="time-stamp">
-                                        <i class="fa fa-clock-o"></i> Энергетическая ценность: @item.product_fatty кДж.
-                                    </li>
-                                            </ul>
-                                        </div>
+            <div class="container3">             
+                    @foreach (Product item in Model)
+                    {
+                        <div class="col-sm-4">
+                            <div class="product-card">
+                                <div class="card-thumbnail">
+                                    <img class="img-responsive" src="@item.product_img" style="height:300px;width:400px">
+                                </div>
+                                <div class="card-content">
+                                    <div class="send">
+                                        <img class="basket" src="/img/basket.png" />
+                                        <i class="fa fa-send fa-2x"></i>
                                     </div>
-                                </div>                                
-        }
+                                    <h1 class="card-title">
+                                        @item.Name_product
+                                    </h1>
+                                    <h2 class="card-sub-title">
+                                        Vijaya Comnet Private
+                                    </h2>
+                                    <p class="description">
+                                        @item.product_description_
+                                    </p>
+                                    <p class="price">Цена: @item.product_price руб. за @item.product_weight грамм</p>
+                                    <ul class="list-inline post-meta">
+                                        <li class="time-stamp">
+                                            <i class="fa fa-clock-o"></i> Массовая доля жира: @item.product_mass_per_fat%
+                                        </li>
+                                        <li class="time-stamp">
+                                            <i class="fa fa-clock-o"></i> Энергетическая ценность: @item.product_fatty кДж.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                
         </div>
-        <div class="">
+        <div class="container4">
 
         </div>
         </div>

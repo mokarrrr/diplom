@@ -10,6 +10,7 @@ using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace diplom.Controllers
 {
@@ -17,6 +18,7 @@ namespace diplom.Controllers
     {
         private MainContext db = new MainContext();
         private readonly ILogger<HomeController> _logger;
+        //List<Product> Products = MainContext.Instantce.Products.ToList();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -29,15 +31,10 @@ namespace diplom.Controllers
 
         public IActionResult MainPage()
         {
-            return View();
+            var products = db.Product.ToList();
+            return View(products);
         }
 
-        public ViewResult HomePage(string searching)
-        {
-            List<Product> Products;
-            Products = null;
-            return View(Products=db.Product.Where(x=>x.Name_product.Contains(searching) || searching == null).ToList());
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

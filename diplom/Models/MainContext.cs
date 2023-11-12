@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
     public class MainContext: DbContext
     {
         private static MainContext instance;
-        public static MainContext Instantce
+        public static MainContext Instance
         {
             get
             {
@@ -34,9 +34,9 @@ using Microsoft.EntityFrameworkCore;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=192.168.227.12;User ID=user06;Password=06;database=123;TrustServerCertificate=True");
+        //optionsBuilder.UseSqlServer(@"Data Source=192.168.227.12;User ID=user06;Password=06;database=123;TrustServerCertificate=True");
 
-        //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-SD2NSU5\MSSQLSERVER05;User ID=sa;Password=12345;database=DiplomBD;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-SD2NSU5\MSSQLSERVER05;User ID=sa;Password=12345;database=DiplomBD;TrustServerCertificate=True");
     }
     public MainContext()
     {
