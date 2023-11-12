@@ -5,6 +5,7 @@
 @model IEnumerable<diplom.Models.Product>
 
 <link rel="stylesheet" href="~/css/mainwindow.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <body>
     <div class="Main">
         <header class="_header">
@@ -14,7 +15,17 @@
             <div class="mogo">
                 <a href="#"><img src="~/img/Group 84(4).png" style="height:180px;width:180px;margin-top:-5px;" /></a>
             </div>
-
+            <div class="header-buttons">
+                <button class="btn cart-button" style="border: 2px solid black;">
+                    <i class="fas fa-shopping-basket"></i>
+                </button>
+                <button class="btn fav-button" style="border: 2px solid black;">
+                    <i class="fas fa-heart"></i>
+                </button>
+                <button class="btn user-button" style="border: 2px solid black;">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
         </header>
         <div  >
             <img class="img1" src="/img/imgonline-com-ua-Resize-sWtY5tt4FP.jpg" style="height:525px;width:115%;margin-left:-100px;margin-top:-20px;z-index:-2;"/>
@@ -53,8 +64,8 @@
                                         @item.Name_product
                                     </h1>
                                     <h2 class="card-sub-title">
-                                        Vijaya Comnet Private
-                                    </h2>
+                                     @item.product_article
+                                </h2>
                                     <p class="description">
                                         @item.product_description_
                                     </p>

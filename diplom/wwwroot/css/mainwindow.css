@@ -254,11 +254,13 @@ a:active {
     font-size: 12px;
     line-height: 1.8em;
     display: none;
-    color:black;
-    font-size:18px;
-    font-weight:bold;
-    font-family:'Times New Roman';
-    margin-top:-10px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    margin-top: -10px;
+    max-height: 170px;
+    overflow-y:auto;
     /* height: 0px; */
 }
 
@@ -299,4 +301,45 @@ a:active {
 }
 .price{
     font-size:15pt;
+}
+
+.header-buttons {
+    margin-bottom:65px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: linear-gradient(to bottom right,#ffcc01,#fdc401,#ffcc01);
+}
+
+    .btn i {
+        font-size:24px;
+        color: #333; 
+    }
+.fav-button i {
+    background: #333;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.fav-button:hover i {
+    background: linear-gradient(to bottom right,red,#e27105);
+    -webkit-background-clip: text;
+    background-clip: text;
 }

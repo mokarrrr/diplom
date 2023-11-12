@@ -11,7 +11,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Web.Mvc;
 
 namespace diplom.Controllers
 {
