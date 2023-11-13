@@ -11,6 +11,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using diplom.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace diplom.Controllers
 {
@@ -29,10 +31,18 @@ namespace diplom.Controllers
            return View("HomePage", "~/css/site.css"); 
         }
 
-        public IActionResult MainPage()
+        public ActionResult MainPage(string searchQuery)
         {
-            var products = db.Product.ToList();
-            return View(products);
+            IQueryable<Product> products = db.Product;
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                products = products.Where(x => x.Name_product == searchQuery || x.product_description_ == searchQuery);
+            }
+            ProductViewModel PVM = new ProductViewModel
+            {
+                Products = products.ToList(),
+            }; 
+            return View(PVM);
         }
 
 
