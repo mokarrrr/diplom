@@ -325,7 +325,14 @@ a:active {
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
+    width: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    border-width:3px;
 }
+    .fav-button1:hover {
+        background-color: red;
+        color: white;
+    }
 .header-scrolled {
     background-color: #F9D86E; 
     transition: background-color 0.5s; 
