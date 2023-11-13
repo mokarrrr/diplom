@@ -50,7 +50,6 @@
             <div class="container3">             
                     @foreach (Product item in Model.Products)
                     {
-
                         <div class="col-sm-4">
                             <div class="product-card">
                                 <div class="card-thumbnail">
@@ -66,7 +65,7 @@
                                     </h1>
                                     <h2 class="card-sub-title">
                                      @item.product_article
-                                </h2>
+                                    </h2>
                                     <p class="description">
                                         @item.product_description_
                                     </p>
@@ -79,17 +78,22 @@
                                             <i class="fa fa-clock-o"></i> Энергетическая ценность: @item.product_fatty кДж.
                                         </li>
                                     </ul>
+                                <button class="fav-button1">
+                                    <i class="fa fa-heart"></i>
+                                </button>
                                 </div>
                             </div>
                         </div>
-                    }
-                
+                    }            
         </div>
+
         <div class="container4">
 
         </div>
         </div>
     </div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {

@@ -316,6 +316,16 @@ a:active {
     -webkit-background-clip: text;
     background-clip: text;
 }
+.fav-button1 {
+    position: absolute;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
 .header-scrolled {
     background-color: #F9D86E; 
     transition: background-color 0.5s; 
