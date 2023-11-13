@@ -291,8 +291,6 @@ a:active {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    border: none;
-    background-color: #f0f0f0;
     border-radius: 25px;
     padding: 10px;
     cursor: pointer;
@@ -301,7 +299,7 @@ a:active {
 }
 
     .btn i {
-        font-size:24px;
+        font-size:30px;
         color: #333; 
     }
 .fav-button i {
@@ -317,4 +315,8 @@ a:active {
     background: linear-gradient(to bottom right,red,#e27105);
     -webkit-background-clip: text;
     background-clip: text;
+}
+.header-scrolled {
+    background-color: #F9D86E; 
+    transition: background-color 0.5s; 
 }

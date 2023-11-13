@@ -36,7 +36,7 @@ namespace diplom.Controllers
             IQueryable<Product> products = db.Product;
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                products = products.Where(x => x.Name_product == searchQuery || x.product_description_ == searchQuery);
+                products = products.Where(x => x.Name_product == searchQuery || x.product_article == searchQuery);
             }
             ProductViewModel PVM = new ProductViewModel
             {

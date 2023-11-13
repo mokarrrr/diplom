@@ -13,7 +13,7 @@
                 <a href="#" class="company-name">Dairy Delights Emporium</a>
             </div>
             <div class="mogo">
-                <a href="#"><img src="~/img/Group 84(10).png" style="height:180px;width:180px;margin-top:-5px;" /></a>
+                <a href="#"><img src="~/img/Group 84(11).png" style="height:180px;width:180px;margin-top:-5px;" /></a>
             </div>
             <div class="header-buttons">
                 <button class="btn cart-button" style="border: 2px solid black;">
@@ -45,12 +45,12 @@
                     <option value="cheaper">Дешевле</option>
                     <option value="expensive">Дороже</option>
                 </select>
-                <label class="count_product"> товаров</label>
             </div>
 
             <div class="container3">             
                     @foreach (Product item in Model.Products)
                     {
+
                         <div class="col-sm-4">
                             <div class="product-card">
                                 <div class="card-thumbnail">
@@ -90,5 +90,21 @@
         </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                var mainBodyOffset = $('.main_body').offset().top;
+
+                if (scroll >= mainBodyOffset) {
+                    $('header').addClass('header-scrolled');
+                } else {
+                    $('header').removeClass('header-scrolled');
+                }
+            });
+        });
+    </script>
+
 </body>
 
