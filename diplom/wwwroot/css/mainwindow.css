@@ -132,32 +132,7 @@ select {
         outline: none;
     }
 
-/*.card {
-    height: 35rem;
-    width: 25rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    transition: all 0.2s ease-out;
-    margin: 10px;
-    gap:20px;
-}
 
-.card-image {
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    height: 15rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
-.img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-}*/
 a,
 a:hover,
 a:active {
@@ -185,7 +160,6 @@ a:active {
 
     .product-card .card-thumbnail {
         background: #000000;
-        /* height: 400px; */
         overflow: hidden;
     }
 
