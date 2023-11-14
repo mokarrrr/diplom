@@ -49,28 +49,27 @@ namespace diplom.Controllers
         public ActionResult MainPage(string searchQuery)
         {
             IQueryable<Product> productsQuery = db.Product;
-            bool hasResults = true; 
+            bool hasResults = true;
 
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 productsQuery = productsQuery.Where(p => p.Name_product.Contains(searchQuery)
                                                           || p.product_article.Contains(searchQuery));
-                hasResults = productsQuery.Any(); 
+                hasResults = productsQuery.Any();
             }
             else
             {
                 hasResults = productsQuery.Any();
-            }
-
+            }           
+            var productsList = productsQuery.ToList();
             ProductViewModel viewModel = new ProductViewModel
             {
-                Products = productsQuery.ToList(),
-                HasResults = hasResults
+                Products = productsList,
+                HasResults = hasResults,
+                ProductCount = productsList.Count 
             };
-
             return View(viewModel);
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
