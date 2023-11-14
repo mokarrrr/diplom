@@ -49,17 +49,16 @@ namespace diplom.Controllers
         public ActionResult MainPage(string searchQuery)
         {
             IQueryable<Product> productsQuery = db.Product;
-            bool hasResults = true; // Предположим, что у нас есть результаты по умолчанию
+            bool hasResults = true; 
 
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 productsQuery = productsQuery.Where(p => p.Name_product.Contains(searchQuery)
                                                           || p.product_article.Contains(searchQuery));
-                hasResults = productsQuery.Any(); // Проверяем, есть ли результаты после фильтрации
+                hasResults = productsQuery.Any(); 
             }
             else
             {
-                // Если searchQuery пустой, проверяем, есть ли какие-либо продукты вообще
                 hasResults = productsQuery.Any();
             }
 

@@ -118,21 +118,7 @@
         });
     </script>
 
-     <script>
-        $(document).ready(function () {
-            $('#searching').on('keyup', function () {
-                var searchValue = $(this).val();
-                $.ajax({
-                    url: '@Url.Action("HomeController", "MainPage")', 
-                    type: 'GET',
-                    data: { searchQuery: searchValue },
-                    success: function (data) {
-                        $('container3').html(data); 
-                    }
-                });
-            });
-        });
-    </script>  
+    
 
 </body>
 
