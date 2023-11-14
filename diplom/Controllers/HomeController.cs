@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using diplom.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace diplom.Controllers
 {
     public class HomeController : Controller
@@ -31,22 +32,48 @@ namespace diplom.Controllers
            return View("HomePage", "~/css/site.css"); 
         }
 
+        //public ActionResult MainPage(string searchQuery)
+        //{
+        //    IQueryable<Product> products = db.Product;
+        //    if (!string.IsNullOrEmpty(searchQuery))
+        //    {
+        //        products = products.Where(x => x.Name_product == searchQuery || x.product_article == searchQuery);
+        //    }
+        //    ProductViewModel PVM = new ProductViewModel
+        //    {
+        //        Products = products.ToList(),
+        //    };
+        //    return View(PVM);
+        //}
+
         public ActionResult MainPage(string searchQuery)
         {
-            IQueryable<Product> products = db.Product;
+            IQueryable<Product> productsQuery = db.Product;
+            bool hasResults = true; // Предположим, что у нас есть результаты по умолчанию
+
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                products = products.Where(x => x.Name_product == searchQuery || x.product_article == searchQuery);
+                productsQuery = productsQuery.Where(p => p.Name_product.Contains(searchQuery)
+                                                          || p.product_article.Contains(searchQuery));
+                hasResults = productsQuery.Any(); // Проверяем, есть ли результаты после фильтрации
             }
-            ProductViewModel PVM = new ProductViewModel
+            else
             {
-                Products = products.ToList(),
-            }; 
-            return View(PVM);
+                // Если searchQuery пустой, проверяем, есть ли какие-либо продукты вообще
+                hasResults = productsQuery.Any();
+            }
+
+            ProductViewModel viewModel = new ProductViewModel
+            {
+                Products = productsQuery.ToList(),
+                HasResults = hasResults
+            };
+
+            return View(viewModel);
         }
 
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
