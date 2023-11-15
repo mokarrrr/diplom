@@ -89,3 +89,27 @@ document.getElementById('switchToRegister').addEventListener('click', function (
         document.getElementById('phoneRegister').addEventListener('input', function (e) {
             this.value = this.value.replace(/[^\d]/g, '');
         });
+
+
+$(document).ready(function () {
+    $('#loginButton').click(function (e) {
+        e.preventDefault();
+        var phoneLogin = $('#phoneLogin').val();
+        var password = $('#password').val(); // Убедитесь, что у вашего поля ввода пароля есть id="password"
+
+        $.post('/Auth/Login', { phoneLogin: phoneLogin, password: password }, function (data) {
+            if (data.success) {
+                $('#userNameDisplay').text(data.userName); // Предполагается, что у вас есть элемент <p id="userNameDisplay"></p>
+            } else {
+                alert(data.message);
+            }
+        });
+    });
+
+    // Обработка клика вне формы
+    $(window).click(function (event) {
+        if ($(event.target).is('.close, #loginContent')) {
+            // Закрыть модальное окно
+        }
+    });
+});

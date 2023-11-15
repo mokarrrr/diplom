@@ -7,12 +7,15 @@ using System.Data.Entity.Core.Metadata.Edm;
 using System.Diagnostics;
 using System.Linq;
 using System.IO;
+using System.Web;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using diplom.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 
 namespace diplom.Controllers
@@ -69,6 +72,46 @@ namespace diplom.Controllers
                 ProductCount = productsList.Count 
             };
             return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string phoneLogin, string password)
+        {
+            // Хеширование пароля перед его сравнением с хешированным паролем в базе данных
+            string hashedPassword = HashPassword(password);
+
+            
+            var user = FindUser(phoneLogin, hashedPassword);
+
+            if (user != null)
+            {
+                // Успешная авторизация
+                Session["UserName"] = user.User_name;
+                return Json(new { success = true, message = "Авторизация успешна.", userName = user.User_name });
+            }
+            else
+            {
+                // Авторизация не удалась
+                return Json(new { success = false, message = "Неверный номер телефона или пароль." });
+            }
+        }
+
+        // Метод для хеширования пароля
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        // Пример метода для поиска пользователя в базе данных
+        private _User FindUser(string phoneLogin, string hashedPassword)
+        {
+            var user = db._Users.FirstOrDefault(u => u.PhoneNumber == phoneLogin && u.user_password == hashedPassword);
+            return user;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
