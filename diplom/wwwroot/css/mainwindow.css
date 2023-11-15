@@ -552,6 +552,7 @@ a:active {
     }
 /*    ..........................модальное окно*/
 .modal {
+    overflow-y:hidden;
     display: none; 
     position: fixed;
     z-index: 1; 

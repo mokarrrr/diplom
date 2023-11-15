@@ -5,7 +5,9 @@
 @model diplom.Models.ViewModels.ProductViewModel;
 
 <link rel="stylesheet" href="~/css/mainwindow.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 
 <body>
     <div class="Main">
@@ -15,27 +17,27 @@
         </button>
 
         <!-- Модальное окно -->
-        <div id="modal" class="modal">
+        <div id="modal" class="modal" style="overflow-y:hidden">
             <!-- Модальный контент -->
             <div class="modal-content">
-                <div id="loginContent">
+                <div id="loginContent">+6
                     <span class="close">&times;</span>
-                    <h2>Login Page</h2>
-                    <input type="text" placeholder="Email or Username">
-                    <input type="password" placeholder="Password">
-                    <button id="loginButton">Login</button>
-                    <button id="switchToRegister">Go to Register</button>
+                    <h2>Авторизация</h2>
+                    <input type="text" id="phoneLogin" maxlength="10" placeholder="Номер телефона">
+                    <input type="password" placeholder="Пароль">
+                    <button id="loginButton">Войти</button>
+                    <button id="switchToRegister">Регистрация</button>
                 </div>
                 <div id="registerContent" style="display:none;">
                     <span class="close">&times;</span>
-                    <h2>Register Page</h2>
-                    <input type="text" placeholder="Email or Username">
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Repeat Password">
-                    <input type="text" placeholder="Enter City" required>
-                    <button id="registerButton">Register</button>
+                    <h2>Регистрация</h2>
+                    <input type="text" placeholder="Email">
+                    <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Повторите пароль">
+                    <input type="text" id="phoneRegister" maxlength="10" placeholder="Номер телефона">
+                    <input type="text" placeholder="Ваш город" required>
+                    <button id="registerButton">Зарегистрироваться</button>
                 </div>
-                <button id="switchToRegister" class="plus-button">+</button>
 
                
 
@@ -108,7 +110,7 @@
                                     <p class="description">
                                         @item.product_description_
                                     </p>
-                                    <p class="price">Цена: @item.product_price руб. за @item.product_weight грамма</p>
+                                    <p class="price">Цена: @item.product_price руб. за @item.product_weight грамм</p>
                                     <ul class="list-inline post-meta">
                                         <li class="time-stamp">
                                             <i class="fa fa-clock-o"></i> Массовая доля жира: @item.product_mass_per_fat%
@@ -175,7 +177,7 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $(window).scroll(function () {
@@ -222,6 +224,12 @@
                 localStorage.setItem('hasVisited', 'true');
             }
         }
+
+        switchToRegister.onclick = function () {
+            loginContent.style.display = "none";
+            registerContent.style.display = "block";
+            modalContent.style.transform = "translateY(-100px)"; 
+        }
         for (var i = 0; i < closeButtons.length; i++) {
             closeButtons[i].onclick = function () {
                 modal.style.display = "none";
@@ -236,5 +244,15 @@
             showModal();
         }
     </script>
+
+    <script>
+        document.getElementById('phoneLogin', 'phoneRegister').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+        document.getElementById('phoneRegister').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^\d]/g, '');
+        });
+    </script>
+
 </body>
 
