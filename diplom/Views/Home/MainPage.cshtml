@@ -20,7 +20,7 @@
         <div id="modal" class="modal" style="overflow-y:hidden">
             <!-- Модальный контент -->
             <div class="modal-content">
-                <div id="loginContent">+6
+                <div id="loginContent">
                     <span class="close">&times;</span>
                     <h2>Авторизация</h2>
                     <input type="text" id="phoneLogin" maxlength="10" placeholder="Номер телефона">
@@ -178,81 +178,7 @@
 
 
 
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var scroll = $(window).scrollTop();
-                var mainBodyOffset = $('.main_body').offset().top;
-
-                if (scroll >= mainBodyOffset) {
-                    $('header').addClass('header-scrolled');
-                } else {
-                    $('header').removeClass('header-scrolled');
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 50) {
-                    $('#backToTop').fadeIn();
-                } else {
-                    $('#backToTop').fadeOut();
-                }
-            });
-
-            $('#backToTop').click(function () {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 400);
-                return false;
-            });
-        });
-    </script>
-    
-    <script>
-        var modal = document.getElementById("modal");
-        var loginContent = document.getElementById("loginContent");
-        var registerContent = document.getElementById("registerContent");
-        var switchToRegister = document.getElementById("switchToRegister");
-        var closeButtons = document.getElementsByClassName("close");
-
-        function showModal() {
-            if (!localStorage.getItem('hasVisited')) {
-                modal.style.display = "block";
-                localStorage.setItem('hasVisited', 'true');
-            }
-        }
-
-        switchToRegister.onclick = function () {
-            loginContent.style.display = "none";
-            registerContent.style.display = "block";
-            modalContent.style.transform = "translateY(-100px)"; 
-        }
-        for (var i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].onclick = function () {
-                modal.style.display = "none";
-            }
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        window.onload = function () {
-            showModal();
-        }
-    </script>
-
-    <script>
-        document.getElementById('phoneLogin', 'phoneRegister').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^\d]/g, '');
-        });
-        document.getElementById('phoneRegister').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^\d]/g, '');
-        });
-    </script>
+   
 
 </body>
 
