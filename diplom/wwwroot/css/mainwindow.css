@@ -103,6 +103,7 @@ header {
     grid-row: 1;
 }
 .container3 {
+    z-index:0;
     padding-left:80px;
     flex-wrap: wrap;
     min-width: fit-content;
@@ -549,3 +550,112 @@ a:active {
         font-size: 20px; 
         padding-top: 10px;
     }
+/*    ..........................модальное окно*/
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; 
+    border-radius: 5px; 
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+.modal-content h2 {
+    color: #333;
+    margin-left: -20px; 
+    border-left: 5px solid teal; 
+    padding-left: 20px; 
+}
+
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.modal-content button {
+    background-color: teal; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+    .modal-content button:hover {
+        opacity: 0.8;
+    }
+
+
+#switchToRegister {
+    background-color: #f1f1f1; 
+    color: teal; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    padding: 10px 15px;
+    top: -10px;
+    right: -10px;
+}
+.content {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 20px;
+    margin: 15% auto; 
+    width: 50%; 
+}
+
+.plus-button {
+    background-color: #f1f1f1;
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    padding: 10px 15px; 
+    font-size: 24px; 
+    line-height: 24px; 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+}

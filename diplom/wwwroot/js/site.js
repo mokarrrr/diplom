@@ -11,4 +11,7 @@ $(function (maam) {
         }, 300);
     });
 });
-
+document.getElementById('switchToRegister').addEventListener('click', function () {
+    document.getElementById('loginContent').style.display = 'none'; // Скрыть контент страницы входа
+    document.getElementById('registerContent').style.display = 'block'; // Показать контент страницы регистрации
+});
