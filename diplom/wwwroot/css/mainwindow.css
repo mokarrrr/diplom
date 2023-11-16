@@ -353,7 +353,7 @@ a:active {
     font-weight: bold;
     font-size: 16px;
     padding: 50px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left:-50px;
 }
 
@@ -593,15 +593,14 @@ a:active {
 
 .modal-content h2 {
     color: #333;
-    margin-left: -20px; 
-    border-left: 5px solid teal; 
-    padding-left: 20px; 
+    margin-left: -20px;
+    border-left: 5px solid #ffcc01;
+    padding-left: 20px;
 }
-
 
 .modal-content input[type="text"],
 .modal-content input[type="password"] {
-    width: 95%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     display: inline-block;
@@ -612,12 +611,12 @@ a:active {
 
 
 .modal-content button {
-    background-color: teal; 
+    background-color: #ffcc01;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     cursor: pointer;
     width: 100%;
 }
@@ -628,17 +627,18 @@ a:active {
 
 
 #switchToRegister {
-    background-color: #f1f1f1; 
-    color: teal; 
+    background-color: #f1f1f1;
+    color: #ffcc01;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
     border: none;
-    border-radius: 50%; 
+    border-radius: 25px;
     cursor: pointer;
     padding: 10px 15px;
     top: -10px;
     right: -10px;
+    border: 2px solid #ffcc01;
 }
 .content {
     background-color: #4CAF50; 
@@ -648,15 +648,6 @@ a:active {
     width: 50%; 
 }
 
-.plus-button {
-    background-color: #f1f1f1;
-    border: none; 
-    border-radius: 50%; 
-    cursor: pointer; 
-    padding: 10px 15px; 
-    font-size: 24px; 
-    line-height: 24px; 
-    position: absolute; 
-    top: 10px; 
-    right: 10px; 
+.error{
+ margin:auto;
 }

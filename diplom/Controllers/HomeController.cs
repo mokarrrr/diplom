@@ -16,7 +16,8 @@ using diplom.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
-
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 
 namespace diplom.Controllers
 {
@@ -81,18 +82,20 @@ namespace diplom.Controllers
             // Хеширование пароля перед его сравнением с хешированным паролем в базе данных
             string hashedPassword = HashPassword(password);
 
-            
+
             var user = FindUser(phoneLogin, hashedPassword);
 
             if (user != null)
             {
-                // Успешная авторизация
-                Session["UserName"] = user.User_name;
+                // Успешная авторизация                
+                HttpContext.Session.SetString("UserName", user.User_name);
+                System.Diagnostics.Debug.WriteLine(user.User_name);
                 return Json(new { success = true, message = "Авторизация успешна.", userName = user.User_name });
             }
             else
             {
                 // Авторизация не удалась
+                System.Diagnostics.Debug.WriteLine("что-то не так");
                 return Json(new { success = false, message = "Неверный номер телефона или пароль." });
             }
         }

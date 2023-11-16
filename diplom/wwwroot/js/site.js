@@ -3,6 +3,7 @@
 
 // Write your JavaScript code.
 
+//для карточки продукта
 $(function (maam) {
     $('.product-card').hover(function () {
         $(this).find('.description').animate({
@@ -11,11 +12,12 @@ $(function (maam) {
         }, 300);
     });
 });
+/*переключение на регистрацию*/
 document.getElementById('switchToRegister').addEventListener('click', function () {
     document.getElementById('loginContent').style.display = 'none'; // Скрыть контент страницы входа
     document.getElementById('registerContent').style.display = 'block'; // Показать контент страницы регистрации
 });
-
+/*кнопка вверх*/
         $(document).ready(function () {
             $(window).scroll(function () {
                 var scroll = $(window).scrollTop();
@@ -29,7 +31,7 @@ document.getElementById('switchToRegister').addEventListener('click', function (
             });
         });
 
-
+/*        .......прокрутка хедер*/
         $(document).ready(function () {
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
@@ -48,7 +50,7 @@ document.getElementById('switchToRegister').addEventListener('click', function (
         });
 
     
-
+        //модальное окно
         var modal = document.getElementById("modal");
         var loginContent = document.getElementById("loginContent");
         var registerContent = document.getElementById("registerContent");
@@ -82,7 +84,7 @@ document.getElementById('switchToRegister').addEventListener('click', function (
         }
 
 
-
+        //ограничение вводимых символов
         document.getElementById('phoneLogin', 'phoneRegister').addEventListener('input', function (e) {
             this.value = this.value.replace(/[^\d]/g, '');
         });
@@ -97,7 +99,7 @@ $(document).ready(function () {
         var phoneLogin = $('#phoneLogin').val();
         var password = $('#password').val(); // Убедитесь, что у вашего поля ввода пароля есть id="password"
 
-        $.post('/Auth/Login', { phoneLogin: phoneLogin, password: password }, function (data) {
+        $.post('', { phoneLogin: phoneLogin, password: password }, function (data) {
             if (data.success) {
                 $('#userNameDisplay').text(data.userName); // Предполагается, что у вас есть элемент <p id="userNameDisplay"></p>
             } else {

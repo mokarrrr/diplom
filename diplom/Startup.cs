@@ -27,6 +27,7 @@ namespace diplom
         {
             services.AddDbContext<MainContext>();
             services.AddControllersWithViews();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,11 @@ namespace diplom
             app.UseRouting();
 
             app.UseAuthorization();
+
+
+            
+            
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
