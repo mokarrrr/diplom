@@ -80,7 +80,8 @@ namespace diplom.Controllers
         public ActionResult Login(string phoneLogin, string password)
         {
             // Хеширование пароля перед его сравнением с хешированным паролем в базе данных
-            string hashedPassword = HashPassword(password);
+            //string hashedPassword = HashPassword(password);
+            string hashedPassword = password;
 
 
             var user = FindUser(phoneLogin, hashedPassword);
@@ -90,12 +91,14 @@ namespace diplom.Controllers
                 // Успешная авторизация                
                 HttpContext.Session.SetString("UserName", user.User_name);
                 System.Diagnostics.Debug.WriteLine(user.User_name);
+                return View(user);
                 return Json(new { success = true, message = "Авторизация успешна.", userName = user.User_name });
             }
             else
             {
                 // Авторизация не удалась
                 System.Diagnostics.Debug.WriteLine("что-то не так");
+                return View(user);
                 return Json(new { success = false, message = "Неверный номер телефона или пароль." });
             }
         }
@@ -113,7 +116,7 @@ namespace diplom.Controllers
         // Пример метода для поиска пользователя в базе данных
         private _User FindUser(string phoneLogin, string hashedPassword)
         {
-            var user = db._Users.FirstOrDefault(u => u.PhoneNumber == phoneLogin && u.user_password == hashedPassword);
+            var user = db._User.FirstOrDefault(u => u.PhoneNumber == phoneLogin && u.user_password == hashedPassword);
             return user;
         }
 

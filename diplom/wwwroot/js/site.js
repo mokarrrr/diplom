@@ -93,25 +93,25 @@ document.getElementById('switchToRegister').addEventListener('click', function (
         });
 
 
-$(document).ready(function () {
-    $('#loginButton').click(function (e) {
-        e.preventDefault();
-        var phoneLogin = $('#phoneLogin').val();
-        var password = $('#password').val(); // Убедитесь, что у вашего поля ввода пароля есть id="password"
+//$(document).ready(function () {
+//    $('#loginButton').click(function (e) {
+//        e.preventDefault();
+//        var phoneLogin = $('#phoneLogin').val();
+//        var password = $('#password').val(); // Убедитесь, что у вашего поля ввода пароля есть id="password"
 
-        $.post('', { phoneLogin: phoneLogin, password: password }, function (data) {
-            if (data.success) {
-                $('#userNameDisplay').text(data.userName); // Предполагается, что у вас есть элемент <p id="userNameDisplay"></p>
-            } else {
-                alert(data.message);
-            }
-        });
-    });
+//        $.post('/', { phoneLogin: phoneLogin, password: password }, function (data) {
+//            if (data.success) {
+//                $('#userNameDisplay').text(data.userName); // Предполагается, что у вас есть элемент <p id="userNameDisplay"></p>
+//            } else {
+//                alert(data.success);
+//            }
+//        });
+//    });
 
-    // Обработка клика вне формы
-    $(window).click(function (event) {
-        if ($(event.target).is('.close, #loginContent')) {
-            // Закрыть модальное окно
-        }
-    });
-});
+//    // Обработка клика вне формы
+//    $(window).click(function (event) {
+//        if ($(event.target).is('.close, #loginContent')) {
+//            // Закрыть модальное окно
+//        }
+//    });
+//});

@@ -17,17 +17,22 @@
         </button>
 
         <!-- Модальное окно -->
+        
         <div id="modal" class="modal" style="overflow-y:hidden">
             <!-- Модальный контент -->
             <div class="modal-content">
+                @using (Html.BeginForm("Login","",FormMethod.Post))
+                {
                 <div id="loginContent">
                     <span class="close">&times;</span>
                     <h2>Авторизация</h2>
-                    <input type="text" id="phoneLogin" maxlength="10" placeholder="Номер телефона">
-                    <input type="password" placeholder="Пароль">
+                    @*<input type="text" id="phoneLogin" maxlength="10" placeholder="Номер телефона">*@
+                        @Html.TextBox("phoneLogin","")
+                    @*<input type="password" id="password" placeholder="Пароль">*@
+                    @Html.TextBox("password","")
                     <button id="loginButton">Войти</button>
                     <button id="switchToRegister">Регистрация</button>
-                </div>
+                </div>}
                 <div id="registerContent" style="display:none;">
                     <span class="close">&times;</span>
                     <h2>Регистрация</h2>
@@ -43,7 +48,7 @@
 
             </div>
         </div>
-
+        
 
 
         <header class="_header">

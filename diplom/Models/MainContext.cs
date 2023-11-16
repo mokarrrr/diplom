@@ -30,7 +30,7 @@ using Microsoft.EntityFrameworkCore;
     public DbSet<_order> _orders { get; set; }
     public DbSet<_Provider> _Providers { get; set; }
     public DbSet<_status> _statuses { get; set; }
-    public DbSet<_User> _Users { get; set; }
+    public DbSet<_User> _User { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
