@@ -91,6 +91,7 @@ namespace diplom.Controllers
                 // Успешная авторизация                
                 HttpContext.Session.SetString("UserName", user.User_name);
                 System.Diagnostics.Debug.WriteLine(user.User_name);
+                
                 return View(user);
                 return Json(new { success = true, message = "Авторизация успешна.", userName = user.User_name });
             }
