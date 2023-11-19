@@ -651,3 +651,17 @@ a:active {
 .error{
  margin:auto;
 }
+.info-button1 {
+    position: absolute;
+    font-size: 20px;
+    bottom: 80px; /* Позиционирование выше fav-button1 */
+    right: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 3px solid black; /* Добавьте border для согласованности стиля */
+}
+
